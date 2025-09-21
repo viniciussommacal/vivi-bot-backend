@@ -43,13 +43,15 @@ cd vivi_bot_backend
 
 6. Copie o ID do assistente criado e cole na variável OPENAI_ASSISTANT_ID.
 
-7. Instale as dependências:
+7. Faça o download e instale o [MongoDB Community](https://www.mongodb.com/try/download/community)
+
+8. Instale as dependências:
 
 ```
 npm install
 ```
 
-8. Inicie o servidor em modo de desenvolvimento:
+9. Inicie o servidor em modo de desenvolvimento:
 
 ```
 npm run dev
