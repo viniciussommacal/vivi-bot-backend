@@ -49,7 +49,7 @@ npm install
 npm run dev
 ```
 
-## Testar a API com cURL
+## 🧪 Testar a API com cURL
 
 1. Inicie a conversa: 
 
