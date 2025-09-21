@@ -1,0 +1,27 @@
+{
+  "name": "registrar_usuario",
+  "description": "Registra um usuário com nome, telefone e e-mail",
+  "strict": false,
+  "parameters": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "description": "Nome completo do usuário"
+      },
+      "phone": {
+        "type": "string",
+        "description": "Número de telefone do usuário"
+      },
+      "email": {
+        "type": "string",
+        "description": "Endereço de e-mail do usuário"
+      }
+    },
+    "required": [
+      "name",
+      "phone",
+      "email"
+    ]
+  }
+}

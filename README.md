@@ -1,6 +1,6 @@
 # 🤖 Viv.ia BOT (Backend)
 
-Um **assistente virtual** utilizando a **API da OpenAI** para **captura de leads em sites**, desenvolvido em **Node.js + TypeScript**, que utiliza **Express** para a API e **MongoDB** para armazenamento dos leads.  
+Um **assistente virtual** utilizando a **API da OpenAI** para **captura de leads em sites**, desenvolvido em **Node.js + TypeScript**, que utiliza **Express** para a API e **MongoDB** para armazenamento dos leads.
 
 O assistente realiza diálogos simulando uma conversa natural, solicitando informações relevantes do lead (**nome, e-mail e telefone**), validando os dados fornecidos, integrando com o backend e armazenando-os no banco de dados.
 
@@ -35,23 +35,29 @@ cd vivi_bot_backend
 
 4. Cole a chave criada na variável OPENAI_API_KEY.
 
-5. Acesse o Painel de Assistentes e crie um novo assistente seguindo o documento Exemplo de Prompt + PDF de FAQ
+5. Acesse o **Painel de Assistentes** e crie um novo assistente:
+   - Copie o prompt que está na pasta `/docs/prompt.txt` e cole no prompt do assistente.
+   - Copie as functions que estão na pasta `/docs/prompt` e, no assistente, clique em **Functions** e cole lá.
+   - Pegue o arquivo **"FAQ Next ERP"** e adicione no assistente clicando em **+ Files**, habilitando a opção **File Search**.
+   - Não é necessário configurar as opções **Temperatura** e **Top P**.
 
 6. Copie o ID do assistente criado e cole na variável OPENAI_ASSISTANT_ID.
 
 7. Instale as dependências:
+
 ```
 npm install
 ```
 
 8. Inicie o servidor em modo de desenvolvimento:
+
 ```
 npm run dev
 ```
 
 ## 🧪 Testar a API com cURL
 
-1. Inicie a conversa: 
+1. Inicie a conversa:
 
 ```
 curl --request POST \
@@ -62,7 +68,7 @@ curl --request POST \
 }'
 ```
 
-2. Envie novas mensagens: 
+2. Envie novas mensagens:
 
 ```
 curl --request POST \
@@ -78,7 +84,7 @@ curl --request POST \
 
 ## 🏗️ Tecnologias Utilizadas
 
-- [Node.js](https://nodejs.org/) 
+- [Node.js](https://nodejs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Express](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
