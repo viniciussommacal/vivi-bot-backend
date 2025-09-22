@@ -25,8 +25,8 @@ Possibilidade de integração com PDFs de FAQ para respostas automatizadas.
 1. Clone o repositório:
 
 ```bash
-git clone https://github.com/viniciussommacal/vivi_bot_backend.git
-cd vivi_bot_backend
+git clone https://github.com/viniciussommacal/vivi-bot-backend.git
+cd vivi-bot-backend
 ```
 
 2. Crie o arquivo .env com base no .env.example presente no projeto.
