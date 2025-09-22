@@ -26,6 +26,9 @@ Possibilidade de integração com PDFs de FAQ para respostas automatizadas.
 
 ```bash
 git clone https://github.com/viniciussommacal/vivi-bot-backend.git
+```
+
+```bash
 cd vivi-bot-backend
 ```
 
