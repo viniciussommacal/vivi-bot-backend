@@ -7,7 +7,7 @@
     "properties": {
       "name": {
         "type": "string",
-        "description": "Nome completo do usuário"
+        "description": "Nome do usuário"
       },
       "phone": {
         "type": "string",
