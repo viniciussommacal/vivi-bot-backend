@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import HealthRoute from './routes/HealthRoute';
-import ChatRoute from './routes/ChatRoute';
+import HealthRoute from './routes/healthRoute';
+import ChatRoute from './routes/chatRoute';
 import cors from 'cors';
 
 dotenv.config();

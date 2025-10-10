@@ -1,6 +1,6 @@
-import { ILeadRepository } from './contracts/LeadRepository';
-import { Lead } from '../models/Lead';
-import { getDb } from '../database/MongoClient';
+import { ILeadRepository } from './contracts/leadRepository';
+import { Lead } from '../models/lead';
+import { getDb } from '../database/mongoClient';
 import { ObjectId, Document, WithId, Db } from 'mongodb';
 
 export class LeadRepository implements ILeadRepository {

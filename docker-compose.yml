@@ -1,0 +1,26 @@
+services:
+  mongo:
+    image: mongo:7
+    container_name: mongo_container
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+
+  app:
+    build: .
+    container_name: backend_container
+    ports:
+      - "4502:4502"
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/leads_database
+      - NODE_ENV=production
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - mongo
+
+volumes:
+  mongo_data:

@@ -1,4 +1,4 @@
-import { Lead } from '../../models/Lead';
+import { Lead } from '../../models/lead';
 
 export interface ILeadRepository {
   create(lead: Lead): Promise<Lead>;

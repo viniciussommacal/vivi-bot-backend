@@ -1,6 +1,6 @@
 import axios from 'axios';
 import dotenv from 'dotenv';
-import { LeadRepository } from '../repositories/LeadRepository';
+import tools from '../tools';
 
 dotenv.config();
 
@@ -70,30 +70,40 @@ async function handleToolCalls(
 
   const toolCall = toolCalls[0];
   const func = toolCall.function;
+  const tool = tools[func.name];
 
-  if (func.name === 'registrar_usuario') {
-    const leadRepo = new LeadRepository();
-    const params = JSON.parse(func.arguments as string);
-
-    const lead = await leadRepo.create({
-      nome: params.name,
-      telefone: params.phone,
-      email: params.email,
-    });
-
-    console.log(`Lead "${params.name} registrado com sucesso! ID: ${lead._id}`);
+  if (!tool) {
+    const result = `Função "${func.name}" não encontrada.`;
+    console.error(result);
 
     await http.post(`/threads/${threadId}/runs/${runId}/submit_tool_outputs`, {
       tool_outputs: [
         {
           tool_call_id: toolCall.id,
           output: JSON.stringify({
-            success: true,
+            success: false,
+            result,
           }),
         },
       ],
     });
+
+    return;
   }
+
+  const result = await tool(func.arguments);
+
+  await http.post(`/threads/${threadId}/runs/${runId}/submit_tool_outputs`, {
+    tool_outputs: [
+      {
+        tool_call_id: toolCall.id,
+        output: JSON.stringify({
+          success: true,
+          result,
+        }),
+      },
+    ],
+  });
 }
 
 async function getAssistantMessage(threadId: string): Promise<string> {
@@ -106,7 +116,7 @@ async function getAssistantMessage(threadId: string): Promise<string> {
   );
   const contentMessage = assistantMessage?.content?.[0]?.text?.value ?? '';
 
-  console.log(`Resposta do Assistente: ${contentMessage}`);
+  console.log(`\x1b[34mResposta do Assistente: ${contentMessage}\x1b[0m`);
 
   return contentMessage;
 }
@@ -126,7 +136,7 @@ export async function sendMessage(
   threadId: string,
   userMessage: string,
 ): Promise<string> {
-  console.log(`Mensagem do Usuário: ${userMessage}`);
+  console.log(`\x1b[35mMensagem do Usuário: ${userMessage}\x1b[0m`);
 
   await http.post(`/threads/${threadId}/messages`, {
     role: 'user',

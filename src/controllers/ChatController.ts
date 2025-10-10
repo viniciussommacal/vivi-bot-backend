@@ -1,5 +1,5 @@
 import type { Request, Response } from 'express';
-import { createThread, sendMessage } from '../services/ChatService';
+import { createThread, sendMessage } from '../services/chatService';
 
 export async function startConversation(
   req: Request,
