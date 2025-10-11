@@ -12,9 +12,9 @@ O assistente realiza diálogos simulando uma conversa natural, solicitando infor
 
 - Validação de dados (nome, e-mail, telefone).
 
-- Armazenamento seguro no MongoDB.
+- Armazenamento com MongoDB.
 
-- Diálogo natural com o usuário utilizando IA da OpenAI.
+- Diálogo com o usuário utilizando IA da OpenAI.
 
 Possibilidade de integração com PDFs de FAQ para respostas automatizadas.
 
@@ -46,18 +46,14 @@ cd vivi-bot-backend
 
 6. Copie o ID do assistente criado e cole na variável OPENAI_ASSISTANT_ID.
 
-7. Faça o download e instale o [MongoDB Community](https://www.mongodb.com/try/download/community)
-
-8. Instale as dependências:
+7. Execute o projeto
 
 ```
-npm install
+docker compose build
 ```
 
-9. Inicie o servidor em modo de desenvolvimento:
-
 ```
-npm run dev
+docker compose up
 ```
 
 ## 🧪 Testar a API com cURL

@@ -51,7 +51,9 @@ export class LeadRepository implements ILeadRepository {
     const collection = await this.getCollection();
     const doc = await collection.findOne({ _id: new ObjectId(id) });
 
-    if (!doc) return null;
+    if (!doc) {
+      return null;
+    }
 
     return {
       _id: doc._id.toHexString(),
