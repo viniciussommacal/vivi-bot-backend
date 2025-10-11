@@ -80,17 +80,3 @@ curl --request POST \
 	"threadId": "thread_xpto123"
 }'
 ```
-
----
-
-## 🏗️ Tecnologias Utilizadas
-
-- [Node.js](https://nodejs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Express](https://expressjs.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [Axios](https://axios-http.com/)
-- [Dotenv](https://github.com/motdotla/dotenv)
-- [Nodemon](https://nodemon.io/)
-- [Prettier](https://prettier.io/)
-- [API Open AI](https://platform.openai.com/docs/overview)
